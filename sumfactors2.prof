@@ -1,0 +1,33 @@
+	Tue Mar 29 01:21 2016 Time and Allocation Profiling Report  (Final)
+
+	   sumfactors +RTS -p -RTS
+
+	total time  =        1.52 secs   (1516 ticks @ 1000 us, 1 processor)
+	total alloc = 2,492,234,384 bytes  (excludes profiling overheads)
+
+COST CENTRE    MODULE  %time %alloc
+
+minus          Main     40.8   46.9
+sumOfDivided.\ Main     38.9   25.6
+sumOfDivided   Main     18.0   25.6
+sumOfDivided.\ Main      1.6    1.6
+
+
+                                                               individual     inherited
+COST CENTRE          MODULE                  no.     entries  %time %alloc   %time %alloc
+
+MAIN                 MAIN                     46           0    0.0    0.0   100.0  100.0
+ CAF                 Main                     91           0    0.0    0.0    99.9  100.0
+  main               Main                     92           1    0.2    0.0    99.9  100.0
+   sumOfDivided      Main                     93           1   18.0   25.6    99.7  100.0
+    sumOfDivided.m   Main                     98           1    0.1    0.0     0.1    0.0
+    sumOfDivided.\   Main                     96      606303    1.6    1.6     1.6    1.6
+    sumOfDivided.\   Main                     95     9949884   38.9   25.6    38.9   25.6
+    primes           Main                     94           1    0.1    0.1    41.2   47.2
+     primes.primeGen Main                     97        5137    0.3    0.3    41.0   47.1
+      minus          Main                     99    13336477   40.8   46.9    40.8   46.9
+ CAF                 GHC.Conc.Signal          87           0    0.0    0.0     0.0    0.0
+ CAF                 GHC.IO.Encoding          81           0    0.0    0.0     0.0    0.0
+ CAF                 GHC.IO.Encoding.Iconv    79           0    0.1    0.0     0.1    0.0
+ CAF                 GHC.IO.Handle.FD         71           0    0.0    0.0     0.0    0.0
+ CAF                 GHC.IO.Handle.Text       69           0    0.0    0.0     0.0    0.0

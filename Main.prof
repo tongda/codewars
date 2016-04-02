@@ -1,0 +1,39 @@
+	Wed Mar 16 20:45 2016 Time and Allocation Profiling Report  (Final)
+
+	   Main +RTS -p -RTS
+
+	total time  =        0.89 secs   (888 ticks @ 1000 us, 1 processor)
+	total alloc = 1,692,047,800 bytes  (excludes profiling overheads)
+
+COST CENTRE  MODULE  %time %alloc
+
+orders       Main     44.0   51.0
+orders.(...) Main     20.9   18.1
+allOrders.\  Main     19.8   16.7
+allOrders    Main     10.1   14.2
+orders.r     Main      3.3    0.0
+orders.q     Main      1.5    0.0
+
+
+                                                                  individual     inherited
+COST CENTRE             MODULE                  no.     entries  %time %alloc   %time %alloc
+
+MAIN                    MAIN                     47           0    0.0    0.0   100.0  100.0
+ CAF                    Main                     93           0    0.0    0.0    99.8  100.0
+  main                  Main                     94           1    0.1    0.0    99.8  100.0
+   zeroes               Main                     95           1    0.0    0.0    99.7  100.0
+    zeroes.process      Main                     99           2    0.0    0.0    99.7  100.0
+     allOrders          Main                    100           2   10.1   14.2    99.7  100.0
+      allOrders.\       Main                    101     1999998   19.8   16.7    89.5   85.8
+       orders           Main                    102     3249989   44.0   51.0    69.7   69.1
+        orders.q        Main                    105     1249991    1.5    0.0     1.5    0.0
+        orders.(...)    Main                    104     3249989   20.9   18.1    20.9   18.1
+        orders.r        Main                    103     3249989    3.3    0.0     3.3    0.0
+    factoring           Main                     96           1    0.0    0.0     0.0    0.0
+     factoringHelper    Main                     97           6    0.0    0.0     0.0    0.0
+      factoringHelper.q Main                     98           2    0.0    0.0     0.0    0.0
+ CAF                    GHC.Conc.Signal          88           0    0.1    0.0     0.1    0.0
+ CAF                    GHC.IO.Encoding          82           0    0.1    0.0     0.1    0.0
+ CAF                    GHC.IO.Encoding.Iconv    80           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.IO.Handle.FD         72           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.IO.Handle.Text       70           0    0.0    0.0     0.0    0.0

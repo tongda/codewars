@@ -1,0 +1,33 @@
+	Tue Mar 29 01:35 2016 Time and Allocation Profiling Report  (Final)
+
+	   sumfactors +RTS -p -RTS
+
+	total time  =        8.51 secs   (8507 ticks @ 1000 us, 1 processor)
+	total alloc = 13,482,071,584 bytes  (excludes profiling overheads)
+
+COST CENTRE    MODULE  %time %alloc
+
+sumOfDivided.\ Main     68.1   47.4
+sumOfDivided   Main     28.7   47.5
+minus          Main      2.5    4.3
+
+
+                                                                individual     inherited
+COST CENTRE           MODULE                  no.     entries  %time %alloc   %time %alloc
+
+MAIN                  MAIN                     46           0    0.0    0.0   100.0  100.0
+ CAF                  Main                     91           0    0.0    0.0   100.0  100.0
+  primesPE            Main                     95           1    0.0    0.0     3.0    4.8
+   primesPE.oddprimes Main                     98           1    0.1    0.2     3.0    4.8
+    primesPE.sieve    Main                     99       50185    0.3    0.3     2.9    4.6
+     minus            Main                    100     7027954    2.5    4.3     2.5    4.3
+  main                Main                     92           1    0.0    0.0    97.0   95.2
+   sumOfDivided       Main                     93           1   28.7   47.5    97.0   95.2
+    sumOfDivided.\    Main                     97      606303    0.2    0.3     0.2    0.3
+    sumOfDivided.\    Main                     96    99820797   68.1   47.4    68.1   47.4
+    sumOfDivided.m    Main                     94           1    0.0    0.0     0.0    0.0
+ CAF                  GHC.Conc.Signal          87           0    0.0    0.0     0.0    0.0
+ CAF                  GHC.IO.Encoding          81           0    0.0    0.0     0.0    0.0
+ CAF                  GHC.IO.Encoding.Iconv    79           0    0.0    0.0     0.0    0.0
+ CAF                  GHC.IO.Handle.FD         71           0    0.0    0.0     0.0    0.0
+ CAF                  GHC.IO.Handle.Text       69           0    0.0    0.0     0.0    0.0
