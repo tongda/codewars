@@ -1,0 +1,38 @@
+	Sat Apr  9 00:08 2016 Time and Allocation Profiling Report  (Final)
+
+	   factorialtail +RTS -p -RTS
+
+	total time  =        0.04 secs   (39 ticks @ 1000 us, 1 processor)
+	total alloc = 100,102,760 bytes  (excludes profiling overheads)
+
+COST CENTRE            MODULE                %time %alloc
+
+countFactorialFactor.\ Main                   92.3   99.9
+CAF                    GHC.IO.Encoding.Iconv   2.6    0.0
+CAF                    GHC.Conc.Signal         2.6    0.0
+main                   Main                    2.6    0.0
+
+
+                                                                          individual     inherited
+COST CENTRE                     MODULE                  no.     entries  %time %alloc   %time %alloc
+
+MAIN                            MAIN                     46           0    0.0    0.0   100.0  100.0
+ CAF                            Main                     91           0    0.0    0.0    94.9  100.0
+  main                          Main                     92           1    2.6    0.0    94.9  100.0
+   zeroes                       Main                     93           1    0.0    0.0    92.3   99.9
+    zeroes.\                    Main                    101           2    0.0    0.0    92.3   99.9
+     countFactorialFactor       Main                    102           2    0.0    0.0    92.3   99.9
+      countFactorialFactor.\    Main                    104          27   92.3   99.9    92.3   99.9
+      countFactorialFactor.nums Main                    103           2    0.0    0.0     0.0    0.0
+    zeroes.fs                   Main                     94           1    0.0    0.0     0.0    0.0
+     factors                    Main                     95           1    0.0    0.0     0.0    0.0
+      factors.\                 Main                    100           2    0.0    0.0     0.0    0.0
+      factoring                 Main                     96           1    0.0    0.0     0.0    0.0
+       primes                   Main                     98           1    0.0    0.0     0.0    0.0
+        primes.filterPrimes     Main                     99           2    0.0    0.0     0.0    0.0
+       factoring'               Main                     97           5    0.0    0.0     0.0    0.0
+ CAF                            GHC.Conc.Signal          87           0    2.6    0.0     2.6    0.0
+ CAF                            GHC.IO.Encoding          81           0    0.0    0.0     0.0    0.0
+ CAF                            GHC.IO.Encoding.Iconv    79           0    2.6    0.0     2.6    0.0
+ CAF                            GHC.IO.Handle.FD         71           0    0.0    0.0     0.0    0.0
+ CAF                            GHC.IO.Handle.Text       69           0    0.0    0.0     0.0    0.0
