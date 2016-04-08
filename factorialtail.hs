@@ -2,8 +2,8 @@
 
 module Main where
 
---import Test.Hspec
---import Text.Printf (printf)
+import Test.Hspec
+import Text.Printf (printf)
 
 import Data.List (sort, group)
 
@@ -12,10 +12,8 @@ zeroes b c = let fs = factors $ b in
   minimum . map (\(f, n) -> (countFactorialFactor c f) `div` n) $ fs
 
 countFactorialFactor :: Integral a => a -> a -> a
-countFactorialFactor m n = sum . map (`countFactor` n) $ [n,n*2..m]
-
-countFactor :: Integral a => a -> a -> a
-countFactor m n = if m `mod` n == 0 then 1 + countFactor (m `div` n) n else 0
+countFactorialFactor m n = let nums = takeWhile (<=m) . map (n^) $ [1..] in
+  sum . map (\num -> fromIntegral . length $ [num,num*2..m]) $ nums
 
 factors :: Integral a => a -> [(a, a)]
 factors = map (\xs -> (head xs, fromIntegral . length $ xs)) . group . sort . factoring
