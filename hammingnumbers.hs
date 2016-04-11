@@ -7,6 +7,7 @@ import Data.List (nub)
 hamming  :: Int -> Int
 hamming n = head . drop (n-1) $ hammings2
 
+-- refer to https://en.wikipedia.org/wiki/Regular_number
 hammings2 = nub (1:combine (combine (map (*2) hammings2) (map (*3) hammings2)) (map (*5) hammings2))
 
 combine :: [Int] -> [Int] -> [Int]
