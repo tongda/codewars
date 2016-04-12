@@ -5,10 +5,10 @@ module Main where
 import Data.List (nub)
 
 hamming  :: Int -> Int
-hamming n = head . drop (n-1) $ hammings2
+hamming n = hammings !! (n-1)
 
 -- refer to https://en.wikipedia.org/wiki/Regular_number
-hammings2 = nub (1:combine (combine (map (*2) hammings2) (map (*3) hammings2)) (map (*5) hammings2))
+hammings = nub (1:map (*2) hammings `combine` map (*3) hammings `combine` map (*5) hammings)
 
 combine :: [Int] -> [Int] -> [Int]
 combine xs [] = xs
